@@ -1,27 +1,5 @@
 
 (() => {
-    // --- MOBILE NAVIGATION TOGGLE ---
-    const navToggle = document.querySelector('.mobile-nav-toggle');
-    const mainNav = document.querySelector('.main-nav');
-    const body = document.querySelector('body');
-
-    if (navToggle && mainNav && body) {
-        navToggle.addEventListener('click', () => {
-            const isVisible = mainNav.getAttribute('data-visible') === 'true';
-            if (isVisible) {
-                mainNav.setAttribute('data-visible', 'false');
-                navToggle.setAttribute('aria-expanded', 'false');
-                navToggle.innerHTML = '&#9776;';
-                body.classList.remove('nav-open');
-            } else {
-                mainNav.setAttribute('data-visible', 'true');
-                navToggle.setAttribute('aria-expanded', 'true');
-                navToggle.innerHTML = '&times;';
-                body.classList.add('nav-open');
-            }
-        });
-    }
-
     // --- INTERSECTION OBSERVER FOR SCROLL ANIMATIONS ---
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
 

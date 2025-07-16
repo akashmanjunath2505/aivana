@@ -1,5 +1,6 @@
 {
   "name": "AIVANA",
   "description": "The official homepage for AIVANA, the innovator behind MedAnna AI Simulator and Doctor AI Companion.",
-  "requestFramePermissions": []
+  "requestFramePermissions": [],
+  "prompt": ""
 }

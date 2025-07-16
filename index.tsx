@@ -1,27 +1,5 @@
 
 (() => {
-    // --- MOBILE NAVIGATION TOGGLE ---
-    const navToggle = document.querySelector('.mobile-nav-toggle');
-    const mainNav = document.querySelector('.main-nav');
-    const body = document.querySelector('body');
-
-    if (navToggle && mainNav && body) {
-        navToggle.addEventListener('click', () => {
-            const isVisible = mainNav.getAttribute('data-visible') === 'true';
-            if (isVisible) {
-                mainNav.setAttribute('data-visible', 'false');
-                navToggle.setAttribute('aria-expanded', 'false');
-                navToggle.innerHTML = '&#9776;';
-                body.classList.remove('nav-open');
-            } else {
-                mainNav.setAttribute('data-visible', 'true');
-                navToggle.setAttribute('aria-expanded', 'true');
-                navToggle.innerHTML = '&times;';
-                body.classList.add('nav-open');
-            }
-        });
-    }
-
     // --- INTERSECTION OBSERVER FOR SCROLL ANIMATIONS ---
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
 
@@ -50,9 +28,14 @@
 
     function showSlide(index: number) {
         slides.forEach((slide, i) => {
+            (slide as HTMLElement).style.display = 'none';
             slide.classList.remove('active');
             if (i === index) {
-                slide.classList.add('active');
+                (slide as HTMLElement).style.display = 'block';
+                // A tiny delay to allow the display property to apply before adding the class for transition
+                setTimeout(() => {
+                    slide.classList.add('active');
+                }, 10);
             }
         });
     }
@@ -85,6 +68,10 @@
         carousel.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
         carousel.addEventListener('mouseleave', () => resetAutoPlay());
 
+        // Initialize slides correctly
+        slides.forEach((slide, i) => {
+             (slide as HTMLElement).style.display = i === 0 ? 'block' : 'none';
+        });
         showSlide(currentSlide); // Show initial slide
         resetAutoPlay(); // Start auto-play
     }
