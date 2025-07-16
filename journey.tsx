@@ -1,10 +1,13 @@
 
 (() => {
+    // Add class to trigger animations on page load
     document.addEventListener('DOMContentLoaded', () => {
-        const journeyContent = document.querySelector('.journey-content');
-        if (journeyContent) {
-            // Add a class to trigger the staggered CSS animations
-            journeyContent.classList.add('is-visible');
+        const journeyContainer = document.querySelector('.journey-container');
+        if (journeyContainer) {
+            // Use a short timeout to ensure styles are applied before class is added
+            setTimeout(() => {
+                journeyContainer.classList.add('is-visible');
+            }, 100);
         }
     });
 })();
