@@ -217,6 +217,14 @@ section {
     display: flex;
     justify-content: center;
     gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.micro-trust-line {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 1.5rem;
+    font-weight: 400;
 }
 
 .hero-section .cta-button:not(.secondary) {
