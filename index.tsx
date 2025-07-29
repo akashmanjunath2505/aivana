@@ -77,7 +77,10 @@ function Header(): HTMLElement {
 
     const header = createElement('header', { className: 'header' }, [
         createElement('div', { className: 'container' }, [
-            createElement('a', { href: '#', className: 'logo' }, ['Aivana']),
+            createElement('a', { href: '#', className: 'logo' }, [
+                createElement('img', { src: 'https://raw.githubusercontent.com/akashmanjunath2505/aivana/main/favicon.png', alt: 'Aivana Logo' }),
+                'Aivana'
+            ]),
             navLinks,
             hamburgerBtn,
         ]),
