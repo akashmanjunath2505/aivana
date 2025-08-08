@@ -1,5 +1,5 @@
 {
-  "name": "aivana-health",
+  "name": "aivana---ai-for-healthcare",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,7 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@google/genai": "^0.7.0"
+    "react-dom": "^19.1.1",
+    "react": "^19.1.1"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",

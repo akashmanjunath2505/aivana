@@ -1,6 +1,6 @@
 {
-  "name": "Aivana Health",
-  "description": "A fully redesigned, modern landing page for Aivana Health, an AI medical simulation platform. This version features a new visual identity, improved UX/UI, and enhanced interactivity to drive user engagement. It includes a sticky navigation, a subtle bio-like particle animation in the hero section, floating medical icons with a parallax effect, a workflow timeline with an EKG pulse animation, and new interactive sections for features (tabs), testimonials (carousel), pricing, and FAQs (accordion). The content is optimized for SEO to attract medical students and professionals.",
+  "name": "Aivana - AI for Healthcare",
+  "description": "Aivana offers a seamlessly integrated AI ecosystem supporting healthcare professionals at every stage of their journey, from medical student training with virtual patients to advanced clinical decision support for physicians and operational optimization for hospitals.",
   "requestFramePermissions": [],
   "prompt": ""
 }
