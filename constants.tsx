@@ -130,15 +130,23 @@ export const impactStories: ImpactStory[] = [
 // Team Data
 export const teamMembers: TeamMember[] = [
   {
-    name: 'Dr. Julian Croft',
-    role: 'Co-Founder & CEO',
-    bio: 'A former cardiologist with a passion for leveraging technology to enhance clinical workflows and improve patient outcomes.',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&h=200&auto=format&fit=crop',
+    name: 'Abhishek Nahire',
+    role: 'Founder & CEO',
+    bio: 'A visionary entrepreneur passionate about revolutionizing healthcare through technology. Abhishek leads Aivana with a focus on creating human-centered AI solutions for clinicians.',
+    image: 'https://raw.githubusercontent.com/akashmanjunath2505/public/main/abhishek.jpeg',
+    linkedin: 'https://www.linkedin.com/in/abhisheknahire40',
   },
   {
-    name: 'Elena Vance',
+    name: 'Akash Manjunath',
     role: 'Co-Founder & CTO',
-    bio: 'A machine learning pioneer with two decades of experience building scalable AI systems for regulated industries.',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&h=200&auto=format&fit=crop',
+    bio: 'A seasoned AI architect and full-stack developer. Akash is the technical mind behind Aivana\'s robust, scalable, and seamlessly integrated healthcare ecosystem.',
+    image: 'https://raw.githubusercontent.com/akashmanjunath2505/public/main/akash.jpeg',
+    linkedin: 'https://www.linkedin.com/in/akash2505/',
+  },
+  {
+    name: 'Arnav Patil',
+    role: 'Lead Product Designer',
+    bio: 'A creative designer dedicated to crafting intuitive and beautiful user experiences. Arnav ensures Aivana\'s products are accessible and empower healthcare professionals.',
+    image: 'https://raw.githubusercontent.com/akashmanjunath2505/public/main/arnav.jpeg',
   },
 ];

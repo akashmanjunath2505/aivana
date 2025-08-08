@@ -1,12 +1,9 @@
-
 import React, { useState } from 'react';
 
 const AivanaLogo: React.FC = () => (
   <div className="flex items-center space-x-3">
-    <svg className="h-8 w-8 text-blue-600" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <path d="M20,2H4C2.895,2,2,2.895,2,4v16c0,1.105,0.895,2,2,2h16c1.105,0,2-0.895,2-2V4C22,2.895,21.105,2,20,2z M18,13h-4v4h-2v-4H8v-2h4V7h2v4h4V13z" />
-    </svg>
-    <span className="font-bold text-2xl text-slate-800 tracking-wider">AIVANA</span>
+    <img src="https://raw.githubusercontent.com/akashmanjunath2505/public/main/favicon.png" alt="Aivana Logo" className="h-8 w-8" />
+    <span className="font-bold text-2xl text-slate-800 tracking-wider">Aivana</span>
   </div>
 );
 
