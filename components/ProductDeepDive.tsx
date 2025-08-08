@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { products } from '../constants';
 import type { Product } from '../types';
@@ -32,8 +31,8 @@ const AccordionItem: React.FC<{
         className={`grid transition-all duration-500 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
       >
         <div className="overflow-hidden">
-            <div className="p-8 bg-white grid grid-cols-1 md:grid-cols-5 gap-8">
-              <div className="md:col-span-2">
+            <div className="p-8 bg-white">
+              <div>
                 <h4 className="text-lg font-bold text-slate-800 mb-3">Key Features</h4>
                 <ul className="list-disc list-inside space-y-2 text-slate-600 leading-relaxed">
                   {product.features.map(feature => <li key={feature}>{feature}</li>)}
@@ -50,9 +49,6 @@ const AccordionItem: React.FC<{
                 >
                   Request Pilot
                 </a>
-              </div>
-              <div className="md:col-span-3 flex items-center justify-center">
-                <img src={product.screenshot} alt={`${product.name} screenshot`} className="rounded-lg shadow-2xl aspect-video object-cover object-center" />
               </div>
             </div>
         </div>
