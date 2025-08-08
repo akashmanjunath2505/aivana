@@ -36,9 +36,9 @@ const Hero: React.FC = () => {
             {/* Left Side */}
             <div className="text-center lg:text-left">
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight flex flex-col leading-tight">
-                <span className="block" style="color: #000">Care</span>
+                <span className="block">Care</span>
                 <span className="block text-blue-500">Meets</span>
-                <span className="block" style="color: #000">Intelligence</span>
+                <span className="block">Intelligence</span>
               </h1>
               <div className="mt-6">
                 <p className="text-lg md:text-xl max-w-2xl text-slate-600 leading-relaxed mx-auto lg:mx-0">
