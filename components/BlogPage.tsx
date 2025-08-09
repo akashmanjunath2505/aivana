@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-const BlogPage: React.FC<{ setView: (view: 'main' | 'blog') => void; }> = ({ setView }) => {
+const BlogPage: React.FC<{ setView: (view: 'main') => void; }> = ({ setView }) => {
   const today = new Date();
   const formattedDate = today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
   const isoDate = today.toISOString().split('T')[0];

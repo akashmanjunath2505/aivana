@@ -11,6 +11,7 @@ export interface Product {
   integration: string;
   regulatory: string;
   screenshot: string;
+  url?: string;
 }
 
 export interface Pillar {

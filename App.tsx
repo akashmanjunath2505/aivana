@@ -10,6 +10,7 @@ import EcosystemFlow from './components/EcosystemFlow';
 import Team from './components/Team';
 import Footer from './components/Footer';
 import BlogPage from './components/BlogPage';
+import ComingSoonPage from './components/ComingSoonPage';
 
 const Preloader: React.FC<{ isExiting: boolean }> = ({ isExiting }) => {
     const [phase, setPhase] = useState(0);
@@ -55,7 +56,8 @@ const Preloader: React.FC<{ isExiting: boolean }> = ({ isExiting }) => {
 const App: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isExiting, setIsExiting] = useState(false);
-  const [view, setView] = useState<'main' | 'blog'>('main');
+  const [view, setView] = useState<'main' | 'blog' | 'coming-soon'>('main');
+  const [comingSoonProduct, setComingSoonProduct] = useState<string>('');
 
   useEffect(() => {
     // Set initial background color, will be overridden by main app when loaded
@@ -79,32 +81,40 @@ const App: React.FC = () => {
     };
   }, []);
 
-  useEffect(() => {
+  const handleSetView = (newView: 'main' | 'blog' | 'coming-soon', productName?: string) => {
+    setView(newView);
+    if (newView === 'coming-soon' && productName) {
+      setComingSoonProduct(productName);
+    } else if (newView !== 'coming-soon') {
+      setComingSoonProduct('');
+    }
     window.scrollTo(0, 0);
-  }, [view]);
+  };
 
   return (
     <>
       {!isLoaded && <Preloader isExiting={isExiting} />}
       <div className={`bg-gray-50 min-h-screen text-slate-800 transition-opacity duration-800 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
         <div className="fixed top-0 left-0 w-full h-full bg-[radial-gradient(#dbeafe_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_60%,transparent_100%)] -z-10 opacity-50"></div>
-        <Header setView={setView} currentView={view} />
+        <Header setView={handleSetView} currentView={view} />
         
         {view === 'main' ? (
           <>
             <main>
               <Hero />
-              <Ecosystem />
+              <Ecosystem setView={handleSetView} />
               <WhyAivana />
               <ProductDeepDive />
               <ImpactStories />
               <EcosystemFlow />
               <Team />
             </main>
-            <Footer setView={setView} currentView={view} />
+            <Footer setView={handleSetView} currentView={view} />
           </>
+        ) : view === 'blog' ? (
+          <BlogPage setView={handleSetView} />
         ) : (
-          <BlogPage setView={setView} />
+          <ComingSoonPage productName={comingSoonProduct} setView={handleSetView} />
         )}
       </div>
     </>

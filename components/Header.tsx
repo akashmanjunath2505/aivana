@@ -7,7 +7,7 @@ const AivanaLogo: React.FC = () => (
   </div>
 );
 
-const Header: React.FC<{ setView: (view: 'main' | 'blog') => void; currentView: 'main' | 'blog' }> = ({ setView, currentView }) => {
+const Header: React.FC<{ setView: (view: 'main' | 'blog') => void; currentView: 'main' | 'blog' | 'coming-soon' }> = ({ setView, currentView }) => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const navItems = [
     { name: 'Ecosystem', href: '#ecosystem' },

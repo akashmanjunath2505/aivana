@@ -3,27 +3,7 @@ import React from 'react';
 import Card from './ui/Card';
 import { products } from '../constants';
 
-const Ecosystem: React.FC = () => {
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const href = e.currentTarget.getAttribute('href');
-    if (!href || !href.startsWith('#')) return;
-
-    const targetId = href.substring(1);
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      const headerElement = document.querySelector('header');
-      const headerOffset = headerElement ? headerElement.offsetHeight : 88;
-      const elementPosition = targetElement.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
-    }
-  };
-
+const Ecosystem: React.FC<{ setView: (view: 'coming-soon', productName: string) => void }> = ({ setView }) => {
   return (
     <section id="ecosystem" className="py-24 md:py-32 bg-white">
       <div className="container mx-auto px-6">
@@ -41,13 +21,23 @@ const Ecosystem: React.FC = () => {
               </div>
               <h3 className="text-xl font-bold mb-2 text-slate-900">{product.name}</h3>
               <p className="text-slate-600 mb-6 flex-grow">{product.shortDescription}</p>
-              <a
-                href={`#deep-dive-${product.id}`}
-                onClick={handleNavClick}
-                className="font-semibold text-blue-600 hover:text-blue-700 transition-colors group"
-              >
-                Learn More <span className="inline-block transform group-hover:translate-x-1 transition-transform">&rarr;</span>
-              </a>
+              {product.url ? (
+                <a
+                  href={product.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-blue-600 hover:text-blue-700 transition-colors group mt-auto"
+                >
+                  Learn More <span className="inline-block transform group-hover:translate-x-1 transition-transform">&rarr;</span>
+                </a>
+              ) : (
+                <button
+                  onClick={() => setView('coming-soon', product.name)}
+                  className="font-semibold text-blue-600 hover:text-blue-700 transition-colors group mt-auto"
+                >
+                  Learn More <span className="inline-block transform group-hover:translate-x-1 transition-transform">&rarr;</span>
+                </button>
+              )}
             </Card>
           ))}
         </div>

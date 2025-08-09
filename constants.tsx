@@ -41,6 +41,7 @@ export const products: Product[] = [
     integration: 'Integrates with university learning management systems (LMS).',
     regulatory: 'Compliant with educational privacy standards.',
     screenshot: 'https://images.unsplash.com/photo-1587825140708-df876c12b44e?q=80&w=1200&auto=format&fit=crop',
+    url: 'https://medanna.aivanahealth.com',
   },
   {
     id: 'doctor-ai',
@@ -53,6 +54,7 @@ export const products: Product[] = [
     integration: 'FHIR-based API for seamless EHR integration.',
     regulatory: 'FDA 510(k) clearance pending.',
     screenshot: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1200&auto=format&fit=crop',
+    url: 'https://doctorai.aivanahealth.com',
   },
   {
     id: 'triage-iq',
